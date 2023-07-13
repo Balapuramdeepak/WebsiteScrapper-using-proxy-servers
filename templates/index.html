@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Web Scraping Tool</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-color: #eec0c6;
+            background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
+            background-repeat: no-repeat;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            /* border: 2px solid red; */
+            width: 500px;
+            height: 300px;
+            max-width: 500px;
+            margin-top: 15vh;
+            margin-left: 350px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .cont {
+            /* border:2px solid yellow; */
+            display: flex;
+        }
+
+        .image-container {
+            width: 20%;
+            flex: 1;
+            padding-top: 100px;
+            margin-left: 15vw;
+            /* border:2px solid red; */
+        }
+
+        .image-container img {
+            display: flex;
+            width: 500px;
+            height: 500px;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: 600;
+            background-image: linear-gradient(to left, #553c9a, #b393d3);
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        form {
+            margin-bottom: 30px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Advanced Web Scraper</h1>
+    <div class="cont">
+        <div class="container">
+            <h2>Web Scraping Tool</h2>
+            <form action="/scrape" method="POST">
+                <input type="text" name="url" placeholder="Enter website URL" required>
+                <button type="submit">Scrape</button>
+            </form>
+        </div>
+
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='pict.png') }}" alt="Image">
+        </div>
+    </div>
+</body>
+
+</html>

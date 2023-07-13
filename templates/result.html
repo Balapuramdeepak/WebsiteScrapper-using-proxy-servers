@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Scraping Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+
+<body>
+
+    <h1>Scraping Results</h1>
+    <div class="container">
+
+        <div class="category">
+            <h2>Anchor - Links</h2>
+            <div class="data-container">
+                {% for anchor, href in scraped_data['anchors'] %}
+                <div class="data-item">
+                    <a href="{{ href }}">{{ anchor }}</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container1">
+
+        <div class="category1">
+            <h2>Paragraphs:</h2>
+            <div class="data-container1">
+                {% for paragraph in scraped_data['paragraphs'] %}
+                <div class="data-item1">{{ paragraph }}</div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Divs:</h2>
+            <div class="data-container">
+                {% for div in scraped_data['divs'] %}
+                    <div class="data-item">{{ div }}</div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <h2 style="text-align: center; color:white;">Proxy Information</h2>
+
+        <div class="ipc">
+
+            <div class="category">
+                <p >Proxy Host: {{ proxy_host }}</p>
+            </div>
+
+                <p style="margin-left:300px;">Host IP: {{ host_ip }}</p>
+
+
+
+        </div>
+
+
+
+</body>
+
+</html>
